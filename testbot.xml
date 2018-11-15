@@ -1,4 +1,4 @@
-<context>
+<context modal = "true">
     <input pattern="$Text">
         <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
         <var name="Question" value="$Text" scope="input"/>
@@ -11,7 +11,56 @@
                 ]]>
               </body>
         </post>
-        <var name ="Question_plain" value = "javascript: ReturnQuestion.cosine_distance"/>
+        <var name ="Question_plain" value = "javascript: ReturnQuestion.all"/>
+        <var name ="1_question_id" value = "javascript: ReturnQuestion.1.id"/>
+        <var name ="1_question_text" value = "javascript: ReturnQustion.1.text"/>
+        <var name ="2_question_id" value = "javascript: ReturnQuestion.2.id"/>
+        <var name ="2_question_text" value = "javascript: ReturnQustion.2.text"/>
+        <var name ="3_question_id" value = "javascript: ReturnQuestion.3.id"/>
+        <var name ="3_question_text" value = "javascript: ReturnQustion.3.text"/>
         <output value='$Question_plain'/>
+        <context>
+            <input pattern="$Number">
+                <context id="number_1" if="$number = 1">
+                    <post url="46.101.255.21/api/questions/" var="ReturnQuestion">
+                          <body>
+                            <![CDATA[
+                              {
+                                "question_id" : "$1_question_id",
+                                "question_text" : "$1_question_text",
+                              }
+                            ]]>
+                          </body>
+                    </post>
+                    <output value='Recorded thanks nigguh'/>
+                </context>
+                <context id="number_2" if="$number = 2">
+                    <post url="46.101.255.21/api/questions/" var="ReturnQuestion">
+                          <body>
+                            <![CDATA[
+                              {
+                                "question_id" : "$2_question_id",
+                                "question_text" : "$2_question_text",
+                              }
+                            ]]>
+                          </body>
+                    </post>
+                    <output value='Recorded thanks nigguh'/>
+                </context>
+                <context id="number_2" if="$number = 3">
+                    <post url="46.101.255.21/api/questions/" var="ReturnQuestion">
+                          <body>
+                            <![CDATA[
+                              {
+                                "question_id" : "$3_question_id",
+                                "question_text" : "$3_question_text",
+                              }
+                            ]]>
+                          </body>
+                    </post>
+                    <output value='Recorded thanks nigguh'/>
+                </context>
+            </input>
+        </context>
     </input>
 </context>
