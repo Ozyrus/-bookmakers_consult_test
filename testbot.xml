@@ -11,7 +11,7 @@
                 ]]>
               </body>
         </post>
-        <var name ="Question_plain" value = "javascript: ReturnQuestion.cosine_distance/>
+        <var name ="Question_plain" value = "javascript: ReturnQuestion.cosine_distance"/>
         <output value='$Question_plain'/>
     </input>
 </context>
