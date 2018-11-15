@@ -2,7 +2,7 @@
     <input pattern="$Text">
         <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
         <var name="Question" value="$Text" scope="input"/>
-        <post url="46.101.255.21" var="ReturnQuestion">
+        <post url="46.101.255.21/api/questions/" var="ReturnQuestion">
               <body>
                 <![CDATA[
                   {
