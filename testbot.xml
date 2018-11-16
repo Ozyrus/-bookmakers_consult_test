@@ -4,9 +4,9 @@
         <var name="Question" value="$Text" scope="input"/>
         <post url="http://46.101.255.21/api/questions/" var="ReturnQuestion">
               <body>
-                <![CDATA[
+                <![CDATA
                     "question" : "$Question"
-                ]]>
+                ]>
               </body>
         </post>
         <var name ="Question_plain" value = "javascript: $ReturnQuestion.cosine_distance"/>
