@@ -64,14 +64,14 @@
                 </context>
             </input>
           <input pattern = "$Text">
-          <var name="Question" value="$Text" scope="context"/>
+          <var name="Answer" value="$Text" scope="context"/>
           <post url="46.101.255.21/api/questions/add/" var="QAPair">
               <header name="Content-Type" value="application/json"/>
               <body>
                 <![CDATA[
                   {
-                    "question" : "$Text",
-                    "answer" : "$Text_2"
+                    "question" : "$Question",
+                    "answer" : "$Answer"
                   }
                 ]]>
               </body>
