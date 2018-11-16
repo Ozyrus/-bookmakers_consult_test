@@ -1,33 +1,33 @@
-<context modal = "true">
+<context>
     <input pattern="$Text">
         <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
-        <var name="Question" value="$Text" scope="input"/>
-        <post url="46.101.255.21/api/questions/" var="ReturnQuestion">
-              <body>
+        <var name="Question" value="$Text" scope="context"/>
+        <post url="http://46.101.255.21/api/questions/" var="ReturnQuestion">
+            <header name="Content-Type" value="application/json"/>
+            <body>
                 <![CDATA[
-                  {
-                    "question" : "$Question",
-                  }
+                    {"question":"$Question"}
                 ]]>
-              </body>
+            </body>
         </post>
-        <var name ="Question_plain" value = "javascript: ReturnQuestion.all"/>
-        <var name ="1_question_id" value = "javascript: ReturnQuestion.1.id"/>
-        <var name ="1_question_text" value = "javascript: ReturnQustion.1.text"/>
-        <var name ="2_question_id" value = "javascript: ReturnQuestion.2.id"/>
-        <var name ="2_question_text" value = "javascript: ReturnQustion.2.text"/>
-        <var name ="3_question_id" value = "javascript: ReturnQuestion.3.id"/>
-        <var name ="3_question_text" value = "javascript: ReturnQustion.3.text"/>
-        <output value='$Question_plain'/>
+        <var name ="Question_plain" value = "javascript: $ReturnQuestion.all"/>
+        <var name ="1_question_id" value = "javascript: $ReturnQuestion.1.id"/>
+        <var name ="1_question_text" value = "javascript: $ReturnQuestion.1.text"/>
+        <var name ="2_question_id" value = "javascript: $ReturnQuestion.2.id"/>
+        <var name ="2_question_text" value = "javascript: $ReturnQuestion.2.text"/>
+        <var name ="3_question_id" value = "javascript: $ReturnQuestion.3.id"/>
+        <var name ="3_question_text" value = "javascript: $ReturnQuestion.3.text"/>
+        <output value='$Question_plain \n Напишите цифру правильного ответа, и я научусь отвечать лучше. Либо напишите свой вариант ответа текстом.'/>
         <context>
             <input pattern="$Number">
                 <context id="number_1" if="$number = 1">
-                    <post url="46.101.255.21/api/questions/" var="ReturnQuestion">
+                    <post url="46.101.255.21/api/questions/" var="Question_1">
+                          <header name="Content-Type" value="application/json"/>
                           <body>
                             <![CDATA[
                               {
-                                "question_id" : "$1_question_id",
-                                "question_text" : "$1_question_text",
+                                "id" : "$1_question_id",
+                                "text" : "$1_question_text"
                               }
                             ]]>
                           </body>
@@ -35,25 +35,27 @@
                     <output value='Recorded thanks nigguh'/>
                 </context>
                 <context id="number_2" if="$number = 2">
-                    <post url="46.101.255.21/api/questions/" var="ReturnQuestion">
+                    <post url="46.101.255.21/api/questions/" var="Question_2">
+                          <header name="Content-Type" value="application/json"/>
                           <body>
                             <![CDATA[
                               {
-                                "question_id" : "$2_question_id",
-                                "question_text" : "$2_question_text",
+                                "id" : "$2_question_id",
+                                "text" : "$2_question_text"
                               }
                             ]]>
                           </body>
                     </post>
                     <output value='Recorded thanks nigguh'/>
                 </context>
-                <context id="number_2" if="$number = 3">
-                    <post url="46.101.255.21/api/questions/" var="ReturnQuestion">
+                <context id="number_3" if="$number = 3">
+                    <post url="46.101.255.21/api/questions/" var="Question_3">
+                          <header name="Content-Type" value="application/json"/>
                           <body>
                             <![CDATA[
                               {
-                                "question_id" : "$3_question_id",
-                                "question_text" : "$3_question_text",
+                                "id" : "$3_question_id",
+                                "text" : "$3_question_text"
                               }
                             ]]>
                           </body>
@@ -61,6 +63,19 @@
                     <output value='Recorded thanks nigguh'/>
                 </context>
             </input>
-        </context>
+          <input pattern = "$Text_2">
+                    <post url="46.101.255.21/api/questions/add/" var="QAPair">
+                          <header name="Content-Type" value="application/json"/>
+                          <body>
+                            <![CDATA[
+                              {
+                                "question" : "$Text",
+                                "answer" : "$Text_2"
+                              }
+                            ]]>
+                          </body>
+                    </post>
+          </input>
+        </context>  
     </input>
 </context>
