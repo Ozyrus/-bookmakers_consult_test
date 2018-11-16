@@ -4,7 +4,7 @@
         <var name="Question" value="$Text" scope="input"/>
         <post url="http://46.101.255.21/api/questions/" var="ReturnQuestion">
             <header name="Content-Type" value="application/json"/>
-            <param name="question" value="$Question"/>
+            <param name="question" value="пидор"/>
         </post>
         <var name ="Question_plain" value = "javascript: $ReturnQuestion.cosine_distance"/>
         <output value="$Question_plain"/>
