@@ -3,11 +3,11 @@
         <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
         <var name="Question" value="$Text" scope="input"/>
         <post url="http://46.101.255.21/api/questions/" var="ReturnQuestion">
-              <header name="Content-Type" value="application/json"/>
+              <header name="Content-Type" value="multipart/form-data"/, name="Content-Diposition" value="form-data" >
               <body>
                 <![CDATA[
                   {
-                     "question" : "$Question",
+                     "$Question"
                    }
                  ]]>
               </body>
