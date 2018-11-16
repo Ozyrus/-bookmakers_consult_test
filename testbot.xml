@@ -63,18 +63,19 @@
                     <output value='Recorded thanks nigguh'/>
                 </context>
             </input>
-          <input pattern = "$Text_2">
-                    <post url="46.101.255.21/api/questions/add/" var="QAPair">
-                          <header name="Content-Type" value="application/json"/>
-                          <body>
-                            <![CDATA[
-                              {
-                                "question" : "$Text",
-                                "answer" : "$Text_2"
-                              }
-                            ]]>
-                          </body>
-                    </post>
+          <input pattern = "$Text">
+          <var name="Question" value="$Text" scope="context"/>
+          <post url="46.101.255.21/api/questions/add/" var="QAPair">
+              <header name="Content-Type" value="application/json"/>
+              <body>
+                <![CDATA[
+                  {
+                    "question" : "$Text",
+                    "answer" : "$Text_2"
+                  }
+                ]]>
+              </body>
+          </post>
           </input>
         </context>  
     </input>
