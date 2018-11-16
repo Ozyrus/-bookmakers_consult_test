@@ -2,9 +2,18 @@
     <input pattern="$Text">
         <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
         <var name="Question" value="$Text" scope="input"/>
-        <get url="http://46.101.255.21/api/questions/" var="ReturnQuestion">
-             <param name="question" value="$Question"/>
-        </get>
+        <post url="http://46.101.255.21/api/questions/" var="ReturnQuestion">
+            <header name="Content-Type" value="application/json"/>
+            <body>
+                <![CDATA[
+                    {
+                        "Content-Disposition" : "form-data",
+                        "name" : "question",
+                        $Question
+                    }
+                ]]>
+            </body>
+        </post>
         <var name ="Question_plain" value = "javascript: $ReturnQuestion.cosine_distance"/>
         <output value="$Question_plain"/>
     </input>
