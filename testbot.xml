@@ -10,6 +10,10 @@
                 ]]>
             </body>
         </post>
+        <var name ="Question_plain" value = "javascript: $ReturnQuestion"/>
+        <var name ="1_question_text" value = "javascript: $ReturnQuestion.top_1"/>
+        <var name ="2_question_text" value = "javascript: $ReturnQuestion.top_2"/>
+        <var name ="3_question_text" value = "javascript: $ReturnQuestion.top_3"/>
         <output value='$Question_plain \n Напишите цифру правильного ответа, и я научусь отвечать лучше. Либо напишите свой вариант ответа текстом.'/>
         <context>
             <input pattern="1">
@@ -18,8 +22,8 @@
                           <body>
                             <![CDATA[
                               {
-                                "id" : "$1_question_id",
-                                "text" : "$1_question_text"
+                                "question" : "$Question",
+                                "answer" : "$1_question_text"
                               }
                             ]]>
                           </body>
@@ -34,8 +38,8 @@
                       <body>
                         <![CDATA[
                           {
-                            "id" : "$2_question_id",
-                            "text" : "$2_question_text"
+                            "question" : "$Question",
+                            "answer" : "$2_question_text"
                           }
                         ]]>
                       </body>
@@ -50,8 +54,8 @@
                       <body>
                         <![CDATA[
                           {
-                            "id" : "$3_question_id",
-                            "text" : "$3_question_text"
+                            "question" : "$Question",
+                            "answer" : "$3_question_text"
                           }
                         ]]>
                       </body>
