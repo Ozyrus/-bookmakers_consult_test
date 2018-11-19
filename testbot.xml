@@ -10,13 +10,6 @@
                 ]]>
             </body>
         </post>
-        <var name ="Question_plain" value = "javascript: $ReturnQuestion"/>
-        <var name ="1_question_id" value = "javascript: $ReturnQuestion.0.id"/>
-        <var name ="1_question_text" value = "javascript: $ReturnQuestion.0.text"/>
-        <var name ="2_question_id" value = "javascript: $ReturnQuestion.1.id"/>
-        <var name ="2_question_text" value = "javascript: $ReturnQuestion.1.text"/>
-        <var name ="3_question_id" value = "javascript: $ReturnQuestion.2.id"/>
-        <var name ="3_question_text" value = "javascript: $ReturnQuestion.2.text"/>
         <output value='$Question_plain \n Напишите цифру правильного ответа, и я научусь отвечать лучше. Либо напишите свой вариант ответа текстом.'/>
         <context>
             <input pattern="1">
