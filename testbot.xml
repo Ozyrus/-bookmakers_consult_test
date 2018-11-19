@@ -32,6 +32,7 @@
                           </body>
                     </post>
                     <output value='Recorded thanks nigguh'/>
+            </input>
             <input pattern = "2">
                 <post url="46.101.255.21/api/questions/" var="Question_2">
                       <header name="Content-Type" value="application/json"/>
