@@ -33,6 +33,8 @@
                     </post>
                     <output value='Recorded thanks nigguh'/>
             </input>
+        </context>
+        <context>
             <input pattern = "2">
                 <post url="46.101.255.21/api/questions/" var="Question_2">
                       <header name="Content-Type" value="application/json"/>
@@ -47,6 +49,8 @@
                 </post>
                 <output value='Recorded thanks nigguh'/>
             </input>
+        </context>
+        <context>
             <input pattern = "3">
                 <post url="46.101.255.21/api/questions/" var="Question_3">
                       <header name="Content-Type" value="application/json"/>
@@ -61,6 +65,8 @@
                 </post>
                 <output value='Recorded thanks nigguh'/>
             </input>
+        </context>
+        <context>
             <input pattern = "$Text">
             <var name="Answer" value="$Text" scope="context"/>
             <post url="46.101.255.21/api/questions/add/" var="QAPair">
@@ -75,6 +81,6 @@
               </body>
             </post>
             </input>
-        </context>  
+        </context>
     </input>
 </context>
