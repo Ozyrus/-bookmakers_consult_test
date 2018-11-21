@@ -17,7 +17,7 @@
         <output value='$Question_plain \n Напишите цифру правильного ответа, и я научусь отвечать лучше. Либо напишите свой вариант ответа текстом.'/>
         <context>
             <input pattern="1">
-                    <post url="46.101.255.21/api/questions/" var="Question_1">
+                    <post url="46.101.255.21/api/question/add/" var="Question_1">
                           <header name="Content-Type" value="application/json"/>
                           <body>
                             <![CDATA[
@@ -33,7 +33,7 @@
         </context>
         <context>
             <input pattern = "2">
-                <post url="46.101.255.21/api/questions/" var="Question_2">
+                <post url="46.101.255.21/api/question/add/" var="Question_2">
                       <header name="Content-Type" value="application/json"/>
                       <body>
                         <![CDATA[
@@ -49,7 +49,7 @@
         </context>
         <context>
             <input pattern = "3">
-                <post url="46.101.255.21/api/questions/" var="Question_3">
+                <post url="46.101.255.21/api/questions/add/" var="Question_3">
                       <header name="Content-Type" value="application/json"/>
                       <body>
                         <![CDATA[
@@ -72,7 +72,7 @@
                 <![CDATA[
                   {
                     "question" : "$Question",
-                    "answer" : "$Answer"
+                    "right_answer" : "$Answer"
                   }
                 ]]>
               </body>
